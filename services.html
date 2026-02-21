@@ -53,9 +53,8 @@ text-align:center;
 }
 
 .cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 gap:25px;
 max-width:950px;
 margin:auto;
