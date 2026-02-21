@@ -7,11 +7,20 @@
 
 <style>
 
+:root{
+--primary:#ff772b;
+--light:#f9fafb;
+--gray:#6b7280;
+}
+
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:#f9fafb;
+background:var(--light);
+color:#1a1a1a;
 }
+
+/* HEADER */
 
 header{
 background:white;
@@ -38,44 +47,82 @@ margin-left:12px;
 .logo-text span{
 font-size:28px;
 font-weight:bold;
-color:#ff772b;
+color:var(--primary);
 }
 
 nav a{
 margin-left:25px;
 text-decoration:none;
 color:#333;
+font-weight:500;
 }
+
+nav a:hover{
+color:var(--primary);
+}
+
+/* SECTION */
 
 .section{
 padding:80px 20px;
 text-align:center;
 }
 
+/* TITLE */
+
+.section h1{
+color:var(--primary);
+font-size:36px;
+margin-bottom:40px;
+}
+
+/* CARDS GRID */
+
 .cards{
 display:grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
 gap:25px;
-max-width:950px;
+justify-content:center;
+max-width:900px;
 margin:auto;
 }
 
+/* CARD */
+
 .card{
 background:white;
-padding:25px;
-width:280px;
+padding:30px 25px;
 border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 transition:0.3s;
-text-align:center;
-flex: 0 0 280px;
 }
 
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* CARD TITLE */
+
+.card h3{
+color:var(--primary);
+margin-bottom:10px;
+}
+
+/* CARD TEXT */
+
+.card p{
+color:#444;
+line-height:1.6;
+}
+
+/* FOOTER */
+
 footer{
-background:#ff772b;
+background:var(--primary);
 color:white;
 text-align:center;
 padding:25px;
+margin-top:50px;
 }
 
 </style>
@@ -136,11 +183,13 @@ padding:25px;
 <p>Scientific analysis, publication support, and research assistance.</p>
 </div>
 
+</div>
+
 </section>
 
 <footer>
 
-© 2026 Vodha Institute
+© 2026 Vodha Institute. All rights reserved.
 
 </footer>
 
