@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Vodha Institute</title>
-
 <style>
 
 :root{
 --primary:#ff772b;
 --light:#f9fafb;
 --gray:#6b7280;
+}
+
+*{
+box-sizing:border-box;
 }
 
 body{
@@ -24,28 +21,28 @@ color:#1a1a1a;
 
 header{
 background:white;
-padding:15px 40px;
+padding:15px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+flex-wrap:wrap;
 box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 .logo{
 display:flex;
 align-items:center;
+gap:12px;
+flex-wrap:wrap;
 }
 
 .logo img{
-height:55px;
-}
-
-.logo-text{
-margin-left:12px;
+height:50px;
+max-width:100%;
 }
 
 .logo-text span{
-font-size:28px;
+font-size:24px;
 font-weight:bold;
 color:var(--primary);
 }
@@ -55,8 +52,14 @@ font-size:13px;
 color:var(--gray);
 }
 
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
 nav a{
-margin-left:25px;
+margin:8px 12px;
 text-decoration:none;
 color:#333;
 font-weight:500;
@@ -69,35 +72,42 @@ color:var(--primary);
 /* SECTION */
 
 .section{
-padding:80px 20px;
+padding:60px 5%;
 max-width:900px;
 margin:auto;
+width:100%;
 }
 
 .section h1{
 color:var(--primary);
-margin-bottom:20px;
+font-size:32px;
 }
 
 .section h2{
 color:var(--primary);
-margin-top:60px;
+margin-top:50px;
 }
 
 /* PROFILE CARD */
 
 .profile{
 background:white;
-padding:35px;
+padding:30px;
 border-radius:15px;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
 margin-top:30px;
 text-align:center;
+width:100%;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .profile img{
-width:180px;
-height:180px;
+width:100%;
+max-width:180px;
+height:auto;
+aspect-ratio:1/1;
 object-fit:cover;
 border-radius:50%;
 margin-bottom:15px;
@@ -107,25 +117,29 @@ box-shadow:0 6px 18px rgba(0,0,0,0.15);
 .profile-name{
 font-size:24px;
 font-weight:700;
-margin-bottom:5px;
 }
 
 .profile-title{
 font-size:16px;
 font-weight:700;
 color:var(--primary);
-margin-bottom:15px;
+margin-top:5px;
+margin-bottom:12px;
 }
 
 .profile-desc{
+font-size:15px;
 color:#444;
 line-height:1.6;
-margin-bottom:15px;
+}
+
+.profile-links{
+margin-top:10px;
 }
 
 .profile-links a{
 display:inline-block;
-margin:5px 12px;
+margin:6px 12px;
 color:var(--primary);
 font-weight:600;
 text-decoration:none;
@@ -141,130 +155,71 @@ footer{
 background:var(--primary);
 color:white;
 text-align:center;
-padding:25px;
+padding:20px;
 margin-top:60px;
+font-size:14px;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media (max-width: 900px){
+
+.section h1{
+font-size:28px;
+}
+
+.profile-name{
+font-size:22px;
+}
+
+}
+
+/* Mobile */
+@media (max-width: 600px){
+
+header{
+flex-direction:column;
+text-align:center;
+}
+
+.logo{
+justify-content:center;
+}
+
+nav{
+margin-top:10px;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.section h1{
+font-size:24px;
+}
+
+.profile{
+padding:25px 15px;
+}
+
+.profile-name{
+font-size:20px;
+}
+
+.profile-title{
+font-size:15px;
+}
+
+.profile-desc{
+font-size:14px;
+}
+
+.profile-links a{
+display:block;
+margin:6px 0;
+}
+
 }
 
 </style>
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-
-<img src="VA_20260221_163725_0004.png">
-
-<div class="logo-text">
-<span>Vodha Institute</span><br>
-<small>Knowledge ● Insight ● Impact</small>
-</div>
-
-</div>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="publications.html">Publications</a>
-<a href="contact.html">Contact</a>
-</nav>
-
-</header>
-
-<section class="section">
-
-<h1>About Vodha Institute</h1>
-
-<p>
-Vodha Institute is an independent academic and professional institution specializing in journal publishing, research consulting, academic coaching, and professional and corporate training.
-</p>
-
-<p>
-Our mission is to advance knowledge, empower researchers and organizations, and create meaningful impact through research excellence and professional development.
-</p>
-
-<p>
-We serve academics, professionals, institutions, and corporations through evidence-based research, education, and consulting services.
-</p>
-
-
-<h2>Profile</h2>
-
-<!-- FOUNDER -->
-
-<div class="profile">
-
-<img src="IMG-20230930-WA0005.jpg">
-
-<div class="profile-name">
-Vania O. Danarilia
-</div>
-
-<div class="profile-title">
-Founder & Managing Director
-</div>
-
-<div class="profile-desc">
-Leads Vodha Institute in advancing academic research, scientific publication, and professional development through evidence-based approaches and global academic standards.
-</div>
-
-<div class="profile-links">
-
-<a href="https://www.linkedin.com/in/vania-olivine-danarilia-578104165" target="_blank">
-LinkedIn
-</a>
-
-<a href="https://scholar.google.co.id/citations?user=cDzUWFUAAAAJ" target="_blank">
-Google Scholar
-</a>
-
-</div>
-
-</div>
-
-
-<!-- CO FOUNDER -->
-
-<div class="profile">
-
-<img src="IMG_6816.jpg">
-
-<div class="profile-name">
-Heni Ardianto
-</div>
-
-<div class="profile-title">
-Co-Founder & Research Director
-</div>
-
-<div class="profile-desc">
-Leads research development, academic publication, and consulting services, supporting researchers and institutions through high-quality scientific and professional solutions.
-</div>
-
-<div class="profile-links">
-
-<a href="https://www.linkedin.com/in/heni-ardianto-196213180" target="_blank">
-LinkedIn
-</a>
-
-<a href="https://scholar.google.co.id/citations?user=CTZcmqMAAAAJ" target="_blank">
-Google Scholar
-</a>
-
-</div>
-
-</div>
-
-
-</section>
-
-<footer>
-
-© 2026 Vodha Institute. All rights reserved.
-
-</footer>
-
-</body>
-</html>
