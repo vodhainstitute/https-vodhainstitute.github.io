@@ -3,71 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Publications - Vodha Institute</title>
 
 <style>
 
+:root{
+--primary:#ff772b;
+--light:#f9fafb;
+--gray:#6b7280;
+}
+
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:#f9fafb;
+background:var(--light);
+color:#1a1a1a;
 }
+
+/* HEADER */
 
 header{
 background:white;
-padding:15px 40px;
+padding:15px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+flex-wrap:wrap;
 box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 .logo{
 display:flex;
 align-items:center;
+gap:12px;
 }
 
 .logo img{
-height:55px;
-}
-
-.logo-text{
-margin-left:12px;
+height:50px;
 }
 
 .logo-text span{
-font-size:28px;
+font-size:24px;
 font-weight:bold;
-color:#ff772b;
+color:var(--primary);
+}
+
+/* NAVIGATION */
+
+nav{
+display:flex;
+gap:15px;
 }
 
 nav a{
-margin-left:25px;
 text-decoration:none;
 color:#333;
+font-weight:500;
+padding:8px 12px;
+border-radius:6px;
 }
 
+nav a:hover{
+background:#fff3ec;
+color:var(--primary);
+}
+
+/* MOBILE NAV FIX */
+
+@media (max-width:600px){
+
+nav{
+overflow-x:auto;
+white-space:nowrap;
+width:100%;
+margin-top:10px;
+padding-bottom:5px;
+}
+
+nav a{
+display:inline-block;
+font-size:14px;
+flex:0 0 auto;
+}
+
+}
+
+/* SECTION */
+
 .section{
-padding:80px 20px;
-text-align:center;
+padding:60px 5%;
 max-width:900px;
 margin:auto;
 }
 
-.pub{
-background:white;
-padding:20px;
-margin:15px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-text-align:left;
+.section h1{
+color:var(--primary);
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
 }
 
+/* PUBLICATION CARD */
+
+.pub{
+background:white;
+padding:25px;
+margin:15px 0;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+text-align:left;
+transition:0.3s;
+}
+
+.pub:hover{
+transform:translateY(-4px);
+}
+
+.pub h3{
+color:var(--primary);
+margin-bottom:8px;
+}
+
+.pub p{
+color:#444;
+line-height:1.6;
+}
+
+/* FOOTER */
+
 footer{
-background:#ff772b;
+background:var(--primary);
 color:white;
 text-align:center;
-padding:25px;
+padding:20px;
+margin-top:60px;
+font-size:14px;
+}
+
+/* MOBILE OPTIMIZATION */
+
+@media (max-width:600px){
+
+.section{
+padding:40px 20px;
+}
+
+.section h1{
+font-size:26px;
+}
+
+.pub{
+padding:20px;
+}
+
+.pub p{
+font-size:15px;
+}
+
 }
 
 </style>
@@ -103,24 +200,30 @@ padding:25px;
 
 <div class="pub">
 <h3>Journal Articles</h3>
-<p>Peer-reviewed research articles in management and organizational science.</p>
+<p>
+Peer-reviewed research articles in management, leadership, human capital, and organizational science published in academic journals.
+</p>
 </div>
 
 <div class="pub">
 <h3>Research Reports</h3>
-<p>Evidence-based reports for institutions and organizations.</p>
+<p>
+Evidence-based research reports prepared for institutions, universities, and organizations to support strategic and policy decisions.
+</p>
 </div>
 
 <div class="pub">
 <h3>Books and Monographs</h3>
-<p>Academic books and scholarly publications.</p>
+<p>
+Academic books, scholarly monographs, and scientific publications contributing to knowledge development and professional practice.
+</p>
 </div>
 
 </section>
 
 <footer>
 
-© 2026 Vodha Institute
+© 2026 Vodha Institute. All rights reserved.
 
 </footer>
 
