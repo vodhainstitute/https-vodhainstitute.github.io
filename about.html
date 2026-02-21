@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Vodha Institute</title>
+
 <style>
 
 :root{
@@ -38,7 +45,6 @@ flex-wrap:wrap;
 
 .logo img{
 height:50px;
-max-width:100%;
 }
 
 .logo-text span{
@@ -75,7 +81,6 @@ color:var(--primary);
 padding:60px 5%;
 max-width:900px;
 margin:auto;
-width:100%;
 }
 
 .section h1{
@@ -88,7 +93,7 @@ color:var(--primary);
 margin-top:50px;
 }
 
-/* PROFILE CARD */
+/* PROFILE */
 
 .profile{
 background:white;
@@ -97,17 +102,14 @@ border-radius:15px;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
 margin-top:30px;
 text-align:center;
-width:100%;
 max-width:500px;
 margin-left:auto;
 margin-right:auto;
 }
 
 .profile img{
-width:100%;
-max-width:180px;
-height:auto;
-aspect-ratio:1/1;
+width:180px;
+height:180px;
 object-fit:cover;
 border-radius:50%;
 margin-bottom:15px;
@@ -123,8 +125,7 @@ font-weight:700;
 font-size:16px;
 font-weight:700;
 color:var(--primary);
-margin-top:5px;
-margin-bottom:12px;
+margin:10px 0;
 }
 
 .profile-desc{
@@ -157,69 +158,145 @@ color:white;
 text-align:center;
 padding:20px;
 margin-top:60px;
-font-size:14px;
 }
 
-/* RESPONSIVE BREAKPOINTS */
+/* MOBILE */
 
-/* Tablet */
-@media (max-width: 900px){
-
-.section h1{
-font-size:28px;
-}
-
-.profile-name{
-font-size:22px;
-}
-
-}
-
-/* Mobile */
-@media (max-width: 600px){
+@media (max-width:600px){
 
 header{
 flex-direction:column;
 text-align:center;
 }
 
-.logo{
-justify-content:center;
-}
-
-nav{
-margin-top:10px;
-}
-
 .section{
 padding:40px 20px;
 }
 
-.section h1{
-font-size:24px;
-}
-
-.profile{
-padding:25px 15px;
+.profile img{
+width:140px;
+height:140px;
 }
 
 .profile-name{
 font-size:20px;
 }
 
-.profile-title{
-font-size:15px;
-}
-
-.profile-desc{
-font-size:14px;
-}
-
-.profile-links a{
-display:block;
-margin:6px 0;
-}
-
 }
 
 </style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="VA_20260221_163725_0004.png">
+
+<div class="logo-text">
+<span>Vodha Institute</span><br>
+<small>Knowledge ● Insight ● Impact</small>
+</div>
+
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="publications.html">Publications</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="section">
+
+<h1>About Vodha Institute</h1>
+
+<p>
+Vodha Institute is an independent academic and professional institution specializing in journal publishing, research consulting, academic coaching, and corporate training.
+</p>
+
+<p>
+Our mission is to advance knowledge and support researchers, professionals, and institutions through high-quality research and professional development.
+</p>
+
+<h2>Profile</h2>
+
+<!-- Vania -->
+
+<div class="profile">
+
+<img src="IMG-20230930-WA0005.jpg">
+
+<div class="profile-name">
+Vania O. Danarilia
+</div>
+
+<div class="profile-title">
+Founder & Managing Director
+</div>
+
+<div class="profile-desc">
+Leads Vodha Institute in advancing academic research, scientific publication, and professional development.
+</div>
+
+<div class="profile-links">
+
+<a href="https://www.linkedin.com/in/vania-olivine-danarilia-578104165" target="_blank">
+LinkedIn
+</a>
+
+<a href="https://scholar.google.co.id/citations?user=cDzUWFUAAAAJ" target="_blank">
+Google Scholar
+</a>
+
+</div>
+
+</div>
+
+<!-- Heni -->
+
+<div class="profile">
+
+<img src="IMG_6816.jpg">
+
+<div class="profile-name">
+Heni Ardianto
+</div>
+
+<div class="profile-title">
+Co-Founder & Research Director
+</div>
+
+<div class="profile-desc">
+Leads research development, academic publication, and consulting services at Vodha Institute.
+</div>
+
+<div class="profile-links">
+
+<a href="https://www.linkedin.com/in/heni-ardianto-196213180" target="_blank">
+LinkedIn
+</a>
+
+<a href="https://scholar.google.co.id/citations?user=CTZcmqMAAAAJ" target="_blank">
+Google Scholar
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Vodha Institute. All rights reserved.
+
+</footer>
+
+</body>
+</html>
