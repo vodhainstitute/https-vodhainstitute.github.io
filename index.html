@@ -9,6 +9,7 @@
 
 :root{
 --primary:#ff772b;
+--primary-light:#ff9a5c;
 --light:#f9fafb;
 --gray:#6b7280;
 }
@@ -17,7 +18,10 @@ body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
 background:var(--light);
+color:#1a1a1a;
 }
+
+/* HEADER */
 
 header{
 background:white;
@@ -44,31 +48,67 @@ margin-left:12px;
 .logo-text span{
 font-size:28px;
 font-weight:bold;
-color:#ff772b;
+color:var(--primary);
 }
 
 .logo-text small{
-font-size:12px;
+font-size:13px;
 color:var(--gray);
 }
+
+/* NAV */
 
 nav a{
 margin-left:25px;
 text-decoration:none;
 color:#333;
+font-weight:500;
 }
+
+nav a:hover{
+color:var(--primary);
+}
+
+/* HERO */
 
 .hero{
-background:linear-gradient(135deg,#ff772b,#ff9a5c);
+background:linear-gradient(135deg,var(--primary),var(--primary-light));
 color:white;
 text-align:center;
-padding:100px 20px;
+padding:110px 20px;
 }
 
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+/* SECTION */
+
 .section{
-padding:60px 20px;
+padding:70px 20px;
 text-align:center;
 }
+
+.section h2{
+color:var(--primary);
+margin-bottom:40px;
+}
+
+/* ABOUT */
+
+.about{
+max-width:800px;
+margin:auto;
+color:#444;
+line-height:1.7;
+}
+
+/* CARDS */
 
 .cards{
 display:flex;
@@ -83,13 +123,25 @@ padding:25px;
 width:280px;
 border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card h3{
+color:var(--primary);
+}
+
+/* FOOTER */
+
 footer{
-background:#ff772b;
+background:var(--primary);
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
+margin-top:40px;
 }
 
 </style>
@@ -106,7 +158,7 @@ padding:20px;
 <div class="logo-text">
 <span>Vodha Institute</span>
 <br>
-<small>Research & Education Institute</small>
+<small>Knowledge ● Insight ● Impact</small>
 </div>
 
 </div>
@@ -114,7 +166,7 @@ padding:20px;
 <nav>
 <a href="#">Home</a>
 <a href="#">About</a>
-<a href="#">Research</a>
+<a href="#">Services</a>
 <a href="#">Publications</a>
 <a href="#">Contact</a>
 </nav>
@@ -123,31 +175,51 @@ padding:20px;
 
 <section class="hero">
 
-<h1>Research • Education • Innovation</h1>
+<h1>Knowledge ● Insight ● Impact</h1>
 
-<p>Advancing knowledge and shaping the future</p>
+<p>Advancing Research, Publishing, and Professional Development</p>
 
 </section>
 
 <section class="section">
 
-<h2>Core Focus Areas</h2>
+<h2>About Vodha Institute</h2>
+
+<p class="about">
+Vodha Institute is an independent academic and professional institution specializing in journal publishing, research consulting, academic coaching, and professional and corporate training. We provide comprehensive research services to support researchers, professionals, and organizations in achieving excellence and creating meaningful impact.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Our Core Services</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Research Excellence</h3>
-<p>High-quality academic and applied research.</p>
+<h3>Journal Publishing</h3>
+<p>Academic journal publication and scientific dissemination.</p>
 </div>
 
 <div class="card">
-<h3>Education & Development</h3>
-<p>Professional training and academic programs.</p>
+<h3>Research Consulting</h3>
+<p>Professional consulting for academic and organizational research.</p>
 </div>
 
 <div class="card">
-<h3>Innovation & Impact</h3>
-<p>Developing innovative organizational solutions.</p>
+<h3>Academic Coaching</h3>
+<p>Mentoring and guidance for academic and research excellence.</p>
+</div>
+
+<div class="card">
+<h3>Corporate Training</h3>
+<p>Professional training programs for companies and institutions.</p>
+</div>
+
+<div class="card">
+<h3>Research Services</h3>
+<p>Scientific analysis, publication support, and research assistance.</p>
 </div>
 
 </div>
@@ -156,7 +228,7 @@ padding:20px;
 
 <footer>
 
-© 2026 Vodha Institute
+© 2026 Vodha Institute. All rights reserved.
 
 </footer>
 
