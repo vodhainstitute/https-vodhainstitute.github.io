@@ -7,70 +7,148 @@
 
 <style>
 
+:root{
+--primary:#ff772b;
+--light:#f9fafb;
+--gray:#6b7280;
+}
+
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:#f9fafb;
+background:var(--light);
+color:#1a1a1a;
 }
+
+/* HEADER */
 
 header{
 background:white;
-padding:15px 40px;
+padding:15px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+flex-wrap:wrap;
 box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 .logo{
 display:flex;
 align-items:center;
+gap:12px;
 }
 
 .logo img{
-height:55px;
-}
-
-.logo-text{
-margin-left:12px;
+height:50px;
 }
 
 .logo-text span{
-font-size:28px;
+font-size:24px;
 font-weight:bold;
-color:#ff772b;
+color:var(--primary);
+}
+
+/* NAVIGATION */
+
+nav{
+display:flex;
+gap:15px;
 }
 
 nav a{
-margin-left:25px;
 text-decoration:none;
 color:#333;
+font-weight:500;
+padding:8px 12px;
+border-radius:6px;
 }
 
+nav a:hover{
+background:#fff3ec;
+color:var(--primary);
+}
+
+/* MOBILE NAV FIX */
+
+@media (max-width:600px){
+
+nav{
+overflow-x:auto;
+white-space:nowrap;
+width:100%;
+margin-top:10px;
+padding-bottom:5px;
+}
+
+nav a{
+display:inline-block;
+font-size:14px;
+flex:0 0 auto;
+}
+
+}
+
+/* SECTION */
+
 .section{
-padding:80px 20px;
-text-align:center;
+padding:60px 5%;
 max-width:700px;
 margin:auto;
 }
+
+.section h1{
+color:var(--primary);
+text-align:center;
+margin-bottom:30px;
+}
+
+/* CONTACT BOX */
 
 .contact-box{
 background:white;
 padding:30px;
 border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
-text-align:left;
+font-size:16px;
 }
 
 .contact-box p{
-margin:10px 0;
+margin:12px 0;
+line-height:1.6;
 }
 
+.contact-box b{
+color:var(--primary);
+}
+
+/* FOOTER */
+
 footer{
-background:#ff772b;
+background:var(--primary);
 color:white;
 text-align:center;
-padding:25px;
+padding:20px;
+margin-top:60px;
+font-size:14px;
+}
+
+/* MOBILE OPTIMIZATION */
+
+@media (max-width:600px){
+
+.section{
+padding:40px 20px;
+}
+
+.contact-box{
+padding:20px;
+font-size:15px;
+}
+
 }
 
 </style>
@@ -106,11 +184,17 @@ padding:25px;
 
 <div class="contact-box">
 
-<p><b>Email:</b> vodhainstitute@gmail.com</p>
+<p><b>Email:</b><br>
+vodhainstitute@gmail.com
+</p>
 
-<p><b>Website:</b> vodhainstitute.github.io</p>
+<p><b>Website:</b><br>
+https://vodhainstitute.github.io
+</p>
 
-<p><b>Location:</b> Yogyakarta-Jakarta, Indonesia</p>
+<p><b>Location:</b><br>
+Yogyakarta – Jakarta, Indonesia
+</p>
 
 </div>
 
@@ -118,7 +202,7 @@ padding:25px;
 
 <footer>
 
-© 2026 Vodha Institute
+© 2026 Vodha Institute. All rights reserved.
 
 </footer>
 
