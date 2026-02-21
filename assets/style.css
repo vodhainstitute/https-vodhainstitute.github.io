@@ -5,6 +5,10 @@
 --gray:#6b7280;
 }
 
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
@@ -12,12 +16,15 @@ background:var(--light);
 color:#1a1a1a;
 }
 
+/* HEADER */
+
 header{
 background:white;
-padding:15px 40px;
+padding:15px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+flex-wrap:wrap;
 box-shadow:0 2px 8px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
@@ -27,18 +34,15 @@ z-index:1000;
 .logo{
 display:flex;
 align-items:center;
+gap:12px;
 }
 
 .logo img{
-height:55px;
-}
-
-.logo-text{
-margin-left:12px;
+height:50px;
 }
 
 .logo-text span{
-font-size:26px;
+font-size:24px;
 font-weight:bold;
 color:var(--primary);
 }
@@ -48,39 +52,129 @@ font-size:13px;
 color:var(--gray);
 }
 
+/* NAVIGATION */
+
+nav{
+display:flex;
+gap:25px;
+}
+
 nav a{
-margin-left:25px;
 text-decoration:none;
 color:#333;
 font-weight:500;
+padding:8px 12px;
+border-radius:6px;
+transition:0.3s;
 }
 
 nav a:hover{
+background:#fff3ec;
 color:var(--primary);
 }
+
+/* HERO */
 
 .hero{
 background:linear-gradient(135deg,var(--primary),var(--primary-light));
 color:white;
 text-align:center;
-padding:120px 20px;
+padding:100px 20px;
 }
 
 .hero-logo{
-width:220px;
-margin-bottom:20px;
+width:260px;
+max-width:90%;
+margin-bottom:25px;
 }
 
+.hero-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:white;
+color:var(--primary);
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SECTION */
+
 .section{
-padding:70px 20px;
-max-width:1000px;
+padding:60px 5%;
+max-width:1100px;
 margin:auto;
 }
+
+/* ABOUT */
+
+.about{
+max-width:900px;
+margin:auto;
+text-align:left;
+line-height:1.8;
+color:#444;
+}
+
+/* SERVICES */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card h3{
+color:var(--primary);
+}
+
+/* FOOTER */
 
 footer{
 background:var(--primary);
 color:white;
 text-align:center;
-padding:25px;
+padding:20px;
 margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav{
+width:100%;
+overflow-x:auto;
+white-space:nowrap;
+margin-top:10px;
+}
+
+nav a{
+display:inline-block;
+}
+
+.hero-logo{
+width:180px;
+}
+
 }
