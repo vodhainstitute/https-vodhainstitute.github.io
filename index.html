@@ -1,281 +1,454 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Vodha Institute</title>
+
 <link rel="stylesheet" href="assets/style.css">
 
 <style>
 
+/* ROOT */
+
 :root{
+
 --primary:#ff772b;
+
 --primary-light:#ff9a5c;
+
 --light:#f9fafb;
+
 --gray:#6b7280;
+
 }
 
-html{
-scroll-behavior:smooth;
-}
+/* BODY */
 
 body{
+
 margin:0;
+
 font-family:'Segoe UI',sans-serif;
+
 background:var(--light);
+
 color:#1a1a1a;
+
 }
 
-/* HEADER */
+/* PREMIUM NAVBAR */
 
 header{
-background:white;
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 8px rgba(0,0,0,0.05);
-position:sticky;
+
+position:fixed;
+
 top:0;
+
+width:100%;
+
+padding:15px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,0.85);
+
+backdrop-filter:blur(12px);
+
+-webkit-backdrop-filter:blur(12px);
+
+box-shadow:0 2px 12px rgba(0,0,0,0.05);
+
 z-index:1000;
+
+transition:all 0.3s ease;
+
 }
 
+header.scrolled{
+
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+
+}
+
+/* LOGO */
+
 .logo{
+
 display:flex;
+
 align-items:center;
+
 }
 
 .logo img{
+
 height:55px;
+
 }
 
 .logo-text{
+
 margin-left:12px;
+
 }
 
 .logo-text span{
+
 font-size:26px;
+
 font-weight:bold;
+
 color:var(--primary);
+
 }
 
 .logo-text small{
-font-size:13px;
+
 color:var(--gray);
+
 }
 
 /* NAV */
 
 nav{
+
 display:flex;
+
 }
 
 nav a{
+
 margin-left:25px;
+
 text-decoration:none;
+
 color:#333;
+
 font-weight:500;
+
 transition:0.3s;
+
 }
 
 nav a:hover{
+
 color:var(--primary);
+
 }
 
-/* MOBILE MENU */
+/* MOBILE BUTTON */
 
 .menu-toggle{
+
 display:none;
+
 font-size:30px;
+
 cursor:pointer;
+
 color:var(--primary);
+
 }
 
 /* HERO */
 
 .hero{
-background:linear-gradient(135deg,var(--primary),var(--primary-light));
+
+background:
+
+linear-gradient(135deg,var(--primary),var(--primary-light));
+
 color:white;
+
 text-align:center;
-padding:100px 20px 120px 20px;
+
+padding:180px 20px 140px;
+
 }
 
-/* HERO LOGO CENTER */
+/* HERO LOGO */
 
 .hero-logo{
+
 width:220px;
+
 margin-bottom:25px;
-animation:fadeUp 1.2s ease;
-filter:drop-shadow(0 10px 25px rgba(0,0,0,0.2));
+
+animation:fadeUp 1s ease;
+
+filter:drop-shadow(0 10px 25px rgba(0,0,0,0.3));
+
 }
 
+/* HERO TEXT */
+
 .hero h1{
+
 font-size:42px;
+
 margin-bottom:10px;
-animation:fadeUp 1.4s ease;
+
+animation:fadeUp 1.2s ease;
+
 }
 
 .hero p{
+
 font-size:20px;
+
 margin-bottom:30px;
-animation:fadeUp 1.6s ease;
+
+animation:fadeUp 1.4s ease;
+
 }
 
 /* BUTTON */
 
 .hero-btn{
+
 display:inline-block;
+
 background:white;
+
 color:var(--primary);
+
 padding:14px 28px;
+
 border-radius:30px;
+
 font-weight:bold;
+
 text-decoration:none;
+
 transition:0.3s;
-animation:fadeUp 1.8s ease;
+
+animation:fadeUp 1.6s ease;
+
 }
 
 .hero-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+
 }
 
 /* SECTION */
 
 .section{
-padding:70px 20px;
+
+padding:80px 20px;
+
+max-width:1100px;
+
+margin:auto;
+
 }
 
 .section h2{
+
 text-align:center;
+
 color:var(--primary);
+
 margin-bottom:40px;
+
 }
 
 /* ABOUT */
 
 .about{
-max-width:900px;
-margin:auto;
+
 line-height:1.8;
-font-size:16px;
+
 color:#444;
-animation:fadeUp 1s ease;
+
 }
 
 /* SERVICES */
 
 .cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(260px,1fr));
+
 gap:25px;
+
 }
 
 .card{
+
 background:white;
+
 padding:25px;
-width:280px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
-animation:fadeUp 1s ease;
+
+border-radius:14px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+transition:0.4s;
+
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 60px rgba(0,0,0,0.2);
+
 }
 
 .card h3{
+
 color:var(--primary);
+
 }
 
 /* CONTACT */
 
 .contact{
+
 text-align:center;
+
 font-size:18px;
+
 }
 
 /* FOOTER */
 
 footer{
+
 background:var(--primary);
+
 color:white;
+
 text-align:center;
+
 padding:25px;
-margin-top:40px;
+
 }
 
 /* ANIMATION */
 
 @keyframes fadeUp{
+
 from{
+
 opacity:0;
-transform:translateY(30px);
+
+transform:translateY(40px);
+
 }
+
 to{
+
 opacity:1;
+
 transform:translateY(0);
+
 }
+
 }
 
 /* MOBILE */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
 header{
+
 padding:15px 20px;
+
 }
 
 .menu-toggle{
+
 display:block;
+
 }
 
 nav{
+
 position:absolute;
+
 top:70px;
+
 right:20px;
+
 background:white;
+
 width:220px;
+
 border-radius:12px;
-box-shadow:0 8px 25px rgba(0,0,0,0.15);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
 flex-direction:column;
-overflow:hidden;
 
 max-height:0;
+
+overflow:hidden;
+
 opacity:0;
-transform:translateY(-10px);
-transition:all 0.3s ease;
+
+transition:0.3s;
+
 }
 
 nav.show{
-max-height:300px;
+
+max-height:400px;
+
 opacity:1;
-transform:translateY(0);
+
 }
 
 nav a{
-padding:15px 20px;
-margin:0;
+
+display:block;
+
+padding:15px;
+
 border-bottom:1px solid #eee;
+
+margin:0;
+
 }
 
-.cards{
-flex-direction:column;
-align-items:center;
+.hero{
+
+padding-top:140px;
+
 }
 
 .hero-logo{
+
 width:160px;
+
 }
 
 .hero h1{
+
 font-size:28px;
+
 }
 
 .hero p{
+
 font-size:16px;
+
 }
 
 }
@@ -286,25 +459,36 @@ font-size:16px;
 
 <body>
 
-<header>
+<header id="header">
 
 <div class="logo">
+
 <img src="VA_20260221_163725_0004.png">
+
 <div class="logo-text">
-<span>Vodha Institute</span>
-<br>
+
+<span>Vodha Institute</span><br>
+
 <small>Knowledge ● Insight ● Impact</small>
+
 </div>
+
 </div>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<nav>
+<nav id="navMenu">
+
 <a href="index.html">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="services.html">Services</a>
+
 <a href="publications.html">Publications</a>
+
 <a href="contact.html">Contact</a>
+
 </nav>
 
 </header>
@@ -315,76 +499,87 @@ font-size:16px;
 
 <h1>VODHA INSTITUTE</h1>
 
-<p>Advancing Research, Publishing, and Professional Development</p>
+<p>
 
-<a href="services.html" class="hero-btn">Work With Us</a>
-  
+Advancing Research, Publishing, and Professional Development
+
+</p>
+
+<a href="services.html" class="hero-btn">
+
+Work With Us
+
+</a>
+
 </section>
 
-<section class="section" id="about">
+<section class="section">
 
 <h2>About Vodha Institute</h2>
 
 <div class="about">
 
 <p>
-Vodha Institute is an independent academic and professional institution established to advance excellence in research, scientific publishing, and professional capacity development. Guided by our principle <strong>Knowledge - Insight - Impact</strong>, we provide integrated services including scholarly journal publishing, research consulting, academic coaching, corporate training, and specialized research support tailored to individuals, academic institutions, government agencies, and private sector organizations.
-</p>
 
-<p>
-We are committed to supporting the creation of high-quality scientific work, strengthening research capability, and enhancing professional competence aligned with academic and industry needs. Our approach combines academic rigor, practical relevance, and professional integrity to ensure meaningful, measurable, and sustainable impact.
-</p>
+Vodha Institute is an independent academic and professional institution committed to advancing excellence in research, scientific publishing, and professional development.
 
-<p>
-Vodha Institute is officially registered with Business Identification Number (NIB): <strong>1802260000519</strong>, reflecting our commitment to legal compliance, institutional credibility, and professional integrity.
-</p>
-
-<p>
-For collaboration inquiries, please contact us at <strong>vodhainstitute@gmail.com</strong>.
 </p>
 
 </div>
 
 </section>
 
-<section class="section" id="services">
+<section class="section">
 
 <h2>Our Services</h2>
 
 <div class="cards">
 
 <div class="card">
+
 <h3>Journal Publishing</h3>
-<p>Scientific journal publishing and academic dissemination.</p>
+
+<p>Professional academic journal publishing support.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Research Consulting</h3>
-<p>
-High-level research consulting services including research design, methodology development, advanced data analysis, and evidence-based reporting to support academic, institutional, and corporate decision-making.
-</p>
+
+<p>Advanced research consulting and analysis services.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Academic Coaching</h3>
-<p>Mentoring and guidance for academic and research excellence.</p>
+
+<p>Mentoring for academic and research excellence.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Corporate Training</h3>
-<p>Professional training programs for companies and institutions.</p>
+
+<p>Professional development and organizational training.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Research Services</h3>
-<p>Scientific analysis, publication support, and research assistance.</p>
+
+<p>Comprehensive research support and implementation.</p>
+
 </div>
 
 </div>
 
 </section>
 
-<section class="section" id="contact">
+<section class="section">
 
 <h2>Contact</h2>
 
@@ -406,11 +601,38 @@ High-level research consulting services including research design, methodology d
 
 <script>
 
+/* MOBILE MENU */
+
 function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("show");
+
+document
+
+.getElementById("navMenu")
+
+.classList.toggle("show");
+
 }
+
+/* NAVBAR SCROLL EFFECT */
+
+window.addEventListener("scroll",function(){
+
+const header=document.getElementById("header");
+
+if(window.scrollY>50){
+
+header.classList.add("scrolled");
+
+}else{
+
+header.classList.remove("scrolled");
+
+}
+
+});
 
 </script>
 
 </body>
+
 </html>
