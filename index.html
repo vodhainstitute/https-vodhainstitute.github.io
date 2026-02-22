@@ -5,31 +5,26 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Vodha Institute</title>
 
 <style>
 
 :root{
 --primary:#ff772b;
---primary-light:#ff9a5c;
 --light:#f9fafb;
 --gray:#6b7280;
 }
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
 background:var(--light);
 color:#1a1a1a;
-overflow-x:hidden;
 }
 
-/* HEADER */
+/* HEADER (TIDAK DIUBAH) */
 
 header{
 background:white;
@@ -50,9 +45,7 @@ align-items:center;
 gap:12px;
 }
 
-.logo img{
-height:50px;
-}
+.logo img{height:50px;}
 
 .logo-text span{
 font-size:24px;
@@ -65,8 +58,6 @@ font-size:13px;
 color:var(--gray);
 }
 
-/* NAVIGATION — sama seperti About */
-
 nav{
 display:flex;
 gap:25px;
@@ -78,7 +69,6 @@ color:#333;
 font-weight:500;
 padding:8px 12px;
 border-radius:6px;
-transition:0.3s;
 }
 
 nav a:hover{
@@ -86,87 +76,19 @@ background:#fff3ec;
 color:var(--primary);
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-align-items:flex-start;
-}
-
-nav{
-width:100%;
-overflow-x:auto;
-white-space:nowrap;
-margin-top:10px;
-}
-
-nav a{
-display:inline-block;
-}
-
-}
-
 /* HERO */
 
 .hero{
-
 background:#ff772b;
-
 color:white;
-
-text-align:center;
-
-padding:100px 20px;
-
+padding:90px 5%;
 }
-
-.hero-logo{
-
-width:240px;
-
-max-width:90%;
-
-margin-bottom:30px;
-
-filter:drop-shadow(0 15px 40px rgba(0,0,0,0.25));
-
-}
-  
-.hero h1{
-font-size:36px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-.hero-btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 30px;
-background:white;
-color:var(--primary);
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-.hero-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* HERO LAYOUT — TAMBAHAN SAJA */
 
 .hero-container{
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:40px;
+gap:50px;
 max-width:1100px;
 margin:auto;
 flex-wrap:wrap;
@@ -175,7 +97,27 @@ flex-wrap:wrap;
 .hero-text{
 flex:1;
 min-width:300px;
-text-align:left;
+}
+
+.hero h1{
+font-size:40px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.hero-btn{
+display:inline-block;
+padding:14px 32px;
+background:white;
+color:var(--primary);
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
 }
 
 .hero-image{
@@ -186,130 +128,94 @@ text-align:center;
 
 .hero-image img{
 width:100%;
-max-width:450px;
-border-radius:12px;
+max-width:480px;
+border-radius:14px;
 box-shadow:0 20px 40px rgba(0,0,0,0.25);
 }
 
-.hero-badge{
-font-size:14px;
-letter-spacing:1px;
-margin-bottom:10px;
-opacity:0.9;
+/* LANGUAGE SWITCH */
+
+.lang-switch{
+margin-bottom:15px;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero-container{
-flex-direction:column;
-text-align:center;
+.lang-switch button{
+background:white;
+border:none;
+color:var(--primary);
+padding:6px 12px;
+margin-right:8px;
+border-radius:20px;
+cursor:pointer;
+font-weight:600;
 }
 
-.hero-text{
-text-align:center;
-}
-
+.lang-switch button.active{
+background:#fff3ec;
 }
 
 /* SECTION */
 
 .section{
-padding:60px 5%;
+padding:70px 5%;
 max-width:1100px;
 margin:auto;
 }
 
-/* ABOUT */
-
-.about{
-max-width:900px;
-margin:auto;
-text-align:left;
-line-height:1.9;
-color:#444;
-font-size:17px;
-}
-
-.about p{
-margin-bottom:18px;
-}
-
-/* SERVICES */
-
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
+gap:25px;
+margin-top:35px;
 }
 
 .card{
 background:white;
-padding:25px;
-border-radius:12px;
+padding:28px;
+border-radius:14px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
 }
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card h3{
-color:var(--primary);
-}
-
-/* FOOTER */
 
 footer{
 background:var(--primary);
 color:white;
 text-align:center;
-padding:20px;
-margin-top:40px;
+padding:22px;
+margin-top:50px;
 }
 
-</style>
+/* MOBILE */
 
+@media(max-width:768px){
+header{flex-direction:column;align-items:flex-start;}
+nav{width:100%;overflow-x:auto;white-space:nowrap;margin-top:10px;}
+.hero-container{flex-direction:column;text-align:center;}
+}
+
+.hidden{display:none;}
+
+</style>
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">
-
 <img src="VA_20260221_163725_0004.png">
-
 <div class="logo-text">
-
 <span>Vodha Institute</span><br>
-
 <small>Knowledge ● Insight ● Impact</small>
-
 </div>
-
 </div>
 
 <nav>
-
 <a href="index.html">Home</a>
-
 <a href="about.html">About</a>
-
 <a href="services.html">Services</a>
-
 <a href="publications.html">Publications</a>
-
 <a href="contact.html">Contact</a>
-
 </nav>
-
 </header>
-
 
 <!-- HERO -->
 
@@ -319,107 +225,95 @@ margin-top:40px;
 
 <div class="hero-text">
 
-<div class="hero-badge">
-WELCOME TO VODHA INSTITUTE
+<div class="lang-switch">
+<button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+<button onclick="setLang('id')" id="btn-id">ID</button>
 </div>
 
-<h1>
-Advancing Research,<br>
-Publishing, and Professional Development
+<h1 class="lang-en">
+Advancing Academic Research with Methodological Rigor
 </h1>
 
-<p>
-Independent academic and professional institution specializing in scientific publishing,
-research consulting, academic coaching, and corporate training.
+<h1 class="lang-id hidden">
+Mendorong Riset Akademik dengan Ketelitian Metodologis
+</h1>
+
+<p class="lang-en">
+Structured research support for students and lecturers in research design,
+data analysis, and scholarly publication.
 </p>
 
-<a href="services.html" class="hero-btn">
-Work With Us
+<p class="lang-id hidden">
+Pendampingan riset terstruktur bagi mahasiswa dan dosen dalam desain penelitian,
+analisis data, dan publikasi ilmiah.
+</p>
+
+<a href="services.html" class="hero-btn lang-en">
+Explore Research Services
+</a>
+
+<a href="services.html" class="hero-btn lang-id hidden">
+Lihat Layanan Riset
 </a>
 
 </div>
 
-
 <div class="hero-image">
-<img src="BUILD.png" alt="Vodha Institute Building">
+<img src="BUILD.png">
 </div>
-  
+
+</div>
 </section>
 
-
-<!-- ABOUT -->
+<!-- RESEARCH FOCUS -->
 
 <section class="section">
 
-<h2 style="text-align:center;color:#ff772b;">About Vodha Institute</h2>
+<h2 class="lang-en" style="text-align:center;color:#ff772b;">
+Our Research Focus
+</h2>
 
-<div class="about">
-
-<p>
-Guided by the principle of <strong>Knowledge ● Insight ● Impact</strong>, Vodha Institute is an independent academic and professional institution committed to advancing research excellence, scientific publishing, and professional development. We provide comprehensive services in scholarly journal publishing, research consulting, academic coaching, corporate training, and specialized research support for individuals, academic institutions, government agencies, and private sector organizations.
-</p>
-
-<p>
-Our purpose is to transform knowledge into meaningful insight and measurable impact. We support researchers, professionals, and organizations in producing high-quality scientific work, strengthening research capacity, and enhancing professional competence. Through a rigorous, ethical, and evidence-based approach, we contribute to the advancement of knowledge, innovation, and organizational capability.
-</p>
-
-<p>
-Vodha Institute is officially registered with a Business Identification Number (NIB): <strong>1802260000519</strong>, reflecting our firm commitment to legal compliance, institutional credibility, and professional integrity.
-</p>
-
-<p>
-For collaboration inquiries or further information, please contact us at <strong>vodhainstitute@gmail.com</strong>.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="section">
-
-<h2 style="text-align:center;color:#ff772b;">Our Services</h2>
+<h2 class="lang-id hidden" style="text-align:center;color:#ff772b;">
+Fokus Layanan Riset
+</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Journal Publishing</h3>
-<p>Scientific journal publishing support.</p>
+<h3 class="lang-en">Research Design & Proposal Development</h3>
+<h3 class="lang-id hidden">Desain & Proposal Penelitian</h3>
 </div>
 
 <div class="card">
-<h3>Research Consulting</h3>
-<p>Research consulting and analysis.</p>
+<h3 class="lang-en">Quantitative & Qualitative Analysis</h3>
+<h3 class="lang-id hidden">Analisis Kuantitatif & Kualitatif</h3>
 </div>
 
 <div class="card">
-<h3>Academic Coaching</h3>
-<p>Academic mentoring and coaching.</p>
-</div>
-
-<div class="card">
-<h3>Corporate Training</h3>
-<p>Professional training programs.</p>
-</div>
-
-<div class="card">
-<h3>Research Services</h3>
-<p>Full research support.</p>
+<h3 class="lang-en">Scholarly Writing & Publication Strategy</h3>
+<h3 class="lang-id hidden">Penulisan Ilmiah & Strategi Publikasi</h3>
 </div>
 
 </div>
 
 </section>
 
-
 <footer>
-
 © 2026 Vodha Institute. All rights reserved.
-
 </footer>
 
+<script>
+function setLang(lang){
+document.querySelectorAll('.lang-en').forEach(el=>el.classList.add('hidden'));
+document.querySelectorAll('.lang-id').forEach(el=>el.classList.add('hidden'));
+
+document.querySelectorAll('.lang-'+lang).forEach(el=>el.classList.remove('hidden'));
+
+document.getElementById('btn-en').classList.remove('active');
+document.getElementById('btn-id').classList.remove('active');
+document.getElementById('btn-'+lang).classList.add('active');
+}
+</script>
 
 </body>
 </html>
