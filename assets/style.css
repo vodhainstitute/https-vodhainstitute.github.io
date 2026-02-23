@@ -22,6 +22,30 @@ slides[current].classList.add("active");
 setInterval(nextSlide, 5000);
 </script>
 
+<script>
+let slides = document.querySelectorAll(".testimonial-slide");
+let dots = document.querySelectorAll(".dot");
+let current = 0;
+
+function showSlide(index){
+slides.forEach(slide => slide.classList.remove("active"));
+dots.forEach(dot => dot.classList.remove("active"));
+slides[index].classList.add("active");
+dots[index].classList.add("active");
+current = index;
+}
+
+function nextSlide(){
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+function currentSlide(index){
+showSlide(index);
+}
+
+setInterval(nextSlide, 5000);
+</script>
 
 body{
 margin:0;
@@ -228,65 +252,78 @@ border-top:1px solid #eee;
 
 }
 
-/* TESTIMONIAL SECTION */
 
-.testimonial-wrapper{
-position:relative;
-max-width:850px;
-margin:50px auto 0 auto;
-padding-top:30px;
-border-top:2px solid #ffe3d4;   /* GARIS PEMBATAS ATAS */
-}
+<!-- PREMIUM TESTIMONIAL SECTION -->
 
-.testimonial-slide{
-display:none;
-text-align:center;
-background:white;
-padding:45px 35px;
-border-radius:18px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-border:1px solid #f3e4db;   /* GARIS HALUS CARD */
-}
+<section class="testimonial-section">
 
-.testimonial-slide.active{
-display:block;
-}
+<h2 class="lang-en" style="text-align:center;color:#ff772b;">
+Academic Testimonials
+</h2>
 
-.testimonial-avatar{
-width:85px;
-height:85px;
-border-radius:50%;
-background:#ff772b;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-font-weight:bold;
-margin:0 auto 20px auto;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
+<h2 class="lang-id hidden" style="text-align:center;color:#ff772b;">
+Testimoni Akademik
+</h2>
 
-.testimonial-rating{
-color:#ffb400;
-font-size:22px;
-margin-bottom:20px;
-letter-spacing:4px;
-}
+<div class="testimonial-wrapper">
 
-.testimonial-slide p{
-font-size:18px;
-line-height:1.7;
-color:#333;
-margin-bottom:20px;
-}
+<div class="testimonial-slide active">
+<div class="testimonial-avatar">L</div>
+<div class="testimonial-rating">★★★★★</div>
 
-.testimonial-slide strong{
-display:block;
-margin-top:10px;
-color:#555;
-font-weight:600;
-}
+<p class="lang-en">
+"Vodha Institute provided structured methodological guidance that significantly improved the clarity and rigor of my research design."
+</p>
+
+<p class="lang-id hidden">
+"Vodha Institute memberikan pendampingan metodologis yang terstruktur sehingga desain penelitian menjadi lebih sistematis."
+</p>
+
+<strong>— Lecturer, Public University</strong>
+</div>
+
+
+<div class="testimonial-slide">
+<div class="testimonial-avatar">M</div>
+<div class="testimonial-rating">★★★★★</div>
+
+<p class="lang-en">
+"The statistical analysis support helped refine my thesis results and align them with publication standards."
+</p>
+
+<p class="lang-id hidden">
+"Pendampingan analisis statistik membantu menyempurnakan hasil tesis sesuai standar publikasi."
+</p>
+
+<strong>— Master’s Student</strong>
+</div>
+
+
+<div class="testimonial-slide">
+<div class="testimonial-avatar">R</div>
+<div class="testimonial-rating">★★★★★</div>
+
+<p class="lang-en">
+"The publication strategy consultation strengthened the manuscript structure and improved submission readiness."
+</p>
+
+<p class="lang-id hidden">
+"Konsultasi strategi publikasi memperkuat struktur artikel dan meningkatkan kesiapan submit."
+</p>
+
+<strong>— Researcher</strong>
+</div>
+
+</div>
+
+<div class="testimonial-dots">
+<span class="dot active" onclick="currentSlide(0)"></span>
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+</div>
+
+</section>
+
 
 /* GARIS BAWAH SECTION */
 .section-divider{
@@ -295,4 +332,17 @@ height:4px;
 background:#ff772b;
 margin:15px auto 30px auto;
 border-radius:4px;
+}
+
+/* GLOBAL SECTION DIVIDER */
+
+.section{
+padding:80px 5%;
+max-width:1100px;
+margin:auto;
+border-bottom:1px solid #f1e6df;
+}
+
+.section:last-of-type{
+border-bottom:none;
 }
