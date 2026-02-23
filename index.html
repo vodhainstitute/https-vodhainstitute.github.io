@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vodha Institute</title>
@@ -24,7 +22,7 @@ background:var(--light);
 color:#1a1a1a;
 }
 
-/* HEADER (TIDAK DIUBAH) */
+/* HEADER */
 
 header{
 background:white;
@@ -39,42 +37,24 @@ top:0;
 z-index:1000;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
+.logo{display:flex;align-items:center;gap:12px;}
 .logo img{height:50px;}
+.logo-text span{font-size:24px;font-weight:bold;color:var(--primary);}
+.logo-text small{font-size:13px;color:var(--gray);}
 
-.logo-text span{
-font-size:24px;
-font-weight:bold;
-color:var(--primary);
-}
+nav{display:flex;gap:25px;}
+nav a{text-decoration:none;color:#333;font-weight:500;padding:8px 12px;border-radius:6px;}
+nav a:hover{background:#fff3ec;color:var(--primary);}
 
-.logo-text small{
-font-size:13px;
-color:var(--gray);
-}
+/* SECTION DIVIDER */
 
-nav{
-display:flex;
-gap:25px;
+.section{
+padding:80px 5%;
+max-width:1100px;
+margin:auto;
+border-bottom:1px solid #f1e6df;
 }
-
-nav a{
-text-decoration:none;
-color:#333;
-font-weight:500;
-padding:8px 12px;
-border-radius:6px;
-}
-
-nav a:hover{
-background:#fff3ec;
-color:var(--primary);
-}
+.section:last-of-type{border-bottom:none;}
 
 /* HERO */
 
@@ -94,21 +74,9 @@ margin:auto;
 flex-wrap:wrap;
 }
 
-.hero-text{
-flex:1;
-min-width:300px;
-}
-
-.hero h1{
-font-size:40px;
-line-height:1.2;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:25px;
-}
+.hero-text{flex:1;min-width:300px;}
+.hero h1{font-size:40px;line-height:1.2;margin-bottom:20px;}
+.hero p{font-size:18px;margin-bottom:25px;}
 
 .hero-btn{
 display:inline-block;
@@ -120,12 +88,7 @@ text-decoration:none;
 font-weight:bold;
 }
 
-.hero-image{
-flex:1;
-min-width:300px;
-text-align:center;
-}
-
+.hero-image{flex:1;min-width:300px;text-align:center;}
 .hero-image img{
 width:100%;
 max-width:480px;
@@ -133,34 +96,7 @@ border-radius:14px;
 box-shadow:0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* LANGUAGE SWITCH */
-
-.lang-switch{
-margin-bottom:15px;
-}
-
-.lang-switch button{
-background:white;
-border:none;
-color:var(--primary);
-padding:6px 12px;
-margin-right:8px;
-border-radius:20px;
-cursor:pointer;
-font-weight:600;
-}
-
-.lang-switch button.active{
-background:#fff3ec;
-}
-
-/* SECTION */
-
-.section{
-padding:70px 5%;
-max-width:1100px;
-margin:auto;
-}
+/* CARDS */
 
 .cards{
 display:grid;
@@ -176,6 +112,77 @@ border-radius:14px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
+/* TESTIMONIAL PREMIUM */
+
+.testimonial-section{
+background:linear-gradient(180deg,#fff8f4 0%, #ffffff 100%);
+padding:100px 5%;
+}
+
+.testimonial-wrapper{
+max-width:850px;
+margin:40px auto 0 auto;
+}
+
+.testimonial-slide{
+display:none;
+text-align:center;
+background:white;
+padding:50px 40px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+opacity:0;
+transform:translateY(15px);
+transition:all 0.6s ease;
+}
+
+.testimonial-slide.active{
+display:block;
+opacity:1;
+transform:translateY(0);
+}
+
+.testimonial-avatar{
+width:90px;
+height:90px;
+border-radius:50%;
+background:#ff772b;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+font-weight:bold;
+margin:0 auto 20px auto;
+}
+
+.testimonial-rating{
+color:#ffb400;
+font-size:22px;
+margin-bottom:20px;
+letter-spacing:4px;
+}
+
+.testimonial-dots{
+margin-top:25px;
+text-align:center;
+}
+
+.testimonial-dots span{
+height:10px;
+width:10px;
+margin:0 6px;
+background:#ffd7c4;
+border-radius:50%;
+display:inline-block;
+cursor:pointer;
+transition:background 0.3s ease;
+}
+
+.testimonial-dots span.active{
+background:#ff772b;
+}
+
 footer{
 background:var(--primary);
 color:white;
@@ -184,6 +191,8 @@ padding:22px;
 margin-top:50px;
 }
 
+.hidden{display:none;}
+
 /* MOBILE */
 
 @media(max-width:768px){
@@ -191,8 +200,6 @@ header{flex-direction:column;align-items:flex-start;}
 nav{width:100%;overflow-x:auto;white-space:nowrap;margin-top:10px;}
 .hero-container{flex-direction:column;text-align:center;}
 }
-
-.hidden{display:none;}
 
 </style>
 </head>
@@ -220,333 +227,57 @@ nav{width:100%;overflow-x:auto;white-space:nowrap;margin-top:10px;}
 <!-- HERO -->
 
 <section class="hero">
-
 <div class="hero-container">
-
 <div class="hero-text">
-
-<div class="lang-switch">
-<button onclick="setLang('en')" id="btn-en" class="active">EN</button>
-<button onclick="setLang('id')" id="btn-id">ID</button>
+<h1>Advancing Academic Research with Methodological Rigor</h1>
+<p>Structured research support for students and lecturers in research design, data analysis, and scholarly publication.</p>
+<a href="services.html" class="hero-btn">Explore Research Services</a>
 </div>
-
-<h1 class="lang-en">
-Advancing Academic Research with Methodological Rigor
-</h1>
-
-<h1 class="lang-id hidden">
-Mendorong Riset Akademik dengan Ketelitian Metodologis
-</h1>
-
-<p class="lang-en">
-Structured research support for students and lecturers in research design,
-data analysis, and scholarly publication.
-</p>
-
-<p class="lang-id hidden">
-Pendampingan riset terstruktur bagi mahasiswa dan dosen dalam desain penelitian,
-analisis data, dan publikasi ilmiah.
-</p>
-
-<a href="services.html" class="hero-btn lang-en">
-Explore Research Services
-</a>
-
-<a href="services.html" class="hero-btn lang-id hidden">
-Lihat Layanan Riset
-</a>
-
-</div>
-
 <div class="hero-image">
 <img src="BUILD.png">
 </div>
-
 </div>
 </section>
 
-<!-- RESEARCH FOCUS -->
+<!-- TESTIMONIAL SECTION -->
 
-<section class="section">
+<section class="testimonial-section">
 
-<h2 class="lang-en" style="text-align:center;color:#ff772b;">
-Our Research Focus
-</h2>
-
-<h2 class="lang-id hidden" style="text-align:center;color:#ff772b;">
-Fokus Layanan Riset
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3 class="lang-en">Research Design & Proposal Development</h3>
-<h3 class="lang-id hidden">Desain & Proposal Penelitian</h3>
-</div>
-
-<div class="card">
-<h3 class="lang-en">Quantitative & Qualitative Analysis</h3>
-<h3 class="lang-id hidden">Analisis Kuantitatif & Kualitatif</h3>
-</div>
-
-<div class="card">
-<h3 class="lang-en">Scholarly Writing & Publication Strategy</h3>
-<h3 class="lang-id hidden">Penulisan Ilmiah & Strategi Publikasi</h3>
-</div>
-
-</div>
-
-</section>
-
-  <!-- ABOUT SECTION -->
-
-<section class="section">
-
-<h2 class="lang-en" style="text-align:center;color:#ff772b;">
-About Vodha Institute
-</h2>
-
-<h2 class="lang-id hidden" style="text-align:center;color:#ff772b;">
-Tentang Vodha Institute
-</h2>
-
-<div class="about" style="max-width:850px;margin:auto;line-height:1.8;color:#444;">
-
-<p class="lang-en">
-Vodha Institute is an independent academic and professional institution 
-dedicated to strengthening research capacity and advancing scholarly publication quality. 
-Guided by the principle of <strong>Knowledge ● Insight ● Impact</strong>, 
-we provide structured research support for students and lecturers 
-with a focus on methodological rigor, analytical precision, and publication readiness.
-</p>
-
-<p class="lang-id hidden">
-Vodha Institute adalah institusi akademik dan profesional independen 
-yang berfokus pada penguatan kapasitas riset dan peningkatan kualitas publikasi ilmiah. 
-Berlandaskan prinsip <strong>Knowledge ● Insight ● Impact</strong>, 
-kami menyediakan pendampingan riset terstruktur bagi mahasiswa dan dosen 
-dengan pendekatan metodologis yang sistematis, analisis yang presisi, dan kesiapan publikasi.
-</p>
-
-<p class="lang-en">
-Vodha Institute is officially registered under Business Identification Number (NIB): 
-<strong>1802260000519</strong>, reflecting our commitment to professional integrity, 
-legal compliance, and institutional credibility.
-</p>
-
-<p class="lang-id hidden">
-Vodha Institute telah terdaftar secara resmi dengan Nomor Induk Berusaha (NIB): 
-<strong>1802260000519</strong>, sebagai bentuk komitmen terhadap integritas profesional, 
-kepatuhan hukum, dan kredibilitas institusional.
-</p>
-
-</div>
-
-</section>
-
-<!-- VISION & MISSION -->
-
-<section class="section">
-
-<h2 class="lang-en" style="text-align:center;color:#ff772b;">
-Vision & Mission
-</h2>
-
-<h2 class="lang-id hidden" style="text-align:center;color:#ff772b;">
-Visi & Misi
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3 class="lang-en">Our Vision</h3>
-<h3 class="lang-id hidden">Visi Kami</h3>
-
-<p class="lang-en">
-To become a trusted academic research partner that elevates scholarly excellence 
-and contributes to impactful scientific advancement at national and international levels.
-</p>
-
-<p class="lang-id hidden">
-Menjadi mitra riset akademik terpercaya yang meningkatkan keunggulan ilmiah 
-dan berkontribusi terhadap kemajuan pengetahuan yang berdampak di tingkat nasional maupun internasional.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3 class="lang-en">Our Mission</h3>
-<h3 class="lang-id hidden">Misi Kami</h3>
-
-<p class="lang-en">
-• Strengthen research methodology and analytical capacity.<br>
-• Support high-quality scholarly publication.<br>
-• Promote ethical, rigorous, and evidence-based research practices.<br>
-• Facilitate sustainable academic and professional development.
-</p>
-
-<p class="lang-id hidden">
-• Memperkuat metodologi dan kapasitas analisis penelitian.<br>
-• Mendukung publikasi ilmiah berkualitas tinggi.<br>
-• Mendorong praktik riset yang etis, sistematis, dan berbasis bukti.<br>
-• Memfasilitasi pengembangan akademik dan profesional yang berkelanjutan.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WHY CHOOSE US -->
-
-<section class="section" style="background:#fff3ec;border-radius:20px;">
-
-<h2 class="lang-en" style="text-align:center;color:#ff772b;">
-Why Choose Vodha Institute
-</h2>
-
-<h2 class="lang-id hidden" style="text-align:center;color:#ff772b;">
-Mengapa Memilih Vodha Institute
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3 class="lang-en">Methodological Rigor</h3>
-<h3 class="lang-id hidden">Ketelitian Metodologis</h3>
-
-<p class="lang-en">
-We emphasize structured research frameworks, robust analytical methods,
-and academically defensible approaches.
-</p>
-
-<p class="lang-id hidden">
-Kami menekankan kerangka penelitian yang sistematis, metode analisis yang kuat,
-serta pendekatan yang dapat dipertanggungjawabkan secara akademik.
-</p>
-</div>
-
-<div class="card">
-<h3 class="lang-en">Publication-Oriented Strategy</h3>
-<h3 class="lang-id hidden">Berorientasi Publikasi</h3>
-
-<p class="lang-en">
-Our guidance is aligned with peer-review standards and reputable journal expectations.
-</p>
-
-<p class="lang-id hidden">
-Pendampingan kami disesuaikan dengan standar peer-review dan ekspektasi jurnal bereputasi.
-</p>
-</div>
-
-<div class="card">
-<h3 class="lang-en">Academic Integrity</h3>
-<h3 class="lang-id hidden">Integritas Akademik</h3>
-
-<p class="lang-en">
-We uphold ethical research principles and promote originality and transparency.
-</p>
-
-<p class="lang-id hidden">
-Kami menjunjung tinggi prinsip etika penelitian serta mendorong orisinalitas dan transparansi.
-</p>
-</div>
-
-<div class="card">
-<h3 class="lang-en">Professional & Legal Credibility</h3>
-<h3 class="lang-id hidden">Kredibilitas Profesional & Legal</h3>
-
-<p class="lang-en">
-Officially registered under NIB: 1802260000519, ensuring accountability and institutional reliability.
-</p>
-
-<p class="lang-id hidden">
-Terdaftar resmi dengan NIB: 1802260000519, menjamin akuntabilitas dan kredibilitas institusional.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ACADEMIC TESTIMONIALS FIXED -->
-
-<section class="section">
-
-<h2 class="lang-en" style="text-align:center;color:#ff772b;">
+<h2 style="text-align:center;color:#ff772b;">
 Academic Testimonials
-</h2>
-
-<h2 class="lang-id hidden" style="text-align:center;color:#ff772b;">
-Testimoni Akademik
 </h2>
 
 <div class="testimonial-wrapper">
 
 <div class="testimonial-slide active">
-
 <div class="testimonial-avatar">L</div>
-
 <div class="testimonial-rating">★★★★★</div>
-
-<p class="lang-en">
-"Vodha Institute provided structured methodological guidance that significantly improved the clarity and rigor of my research design."
-</p>
-
-<p class="lang-id hidden">
-"Vodha Institute memberikan pendampingan metodologis yang terstruktur sehingga desain penelitian menjadi lebih sistematis."
-</p>
-
+<p>"Vodha Institute provided structured methodological guidance that significantly improved the clarity and rigor of my research design."</p>
 <strong>— Lecturer</strong>
-
 </div>
 
-
-
 <div class="testimonial-slide">
-
 <div class="testimonial-avatar">M</div>
-
 <div class="testimonial-rating">★★★★★</div>
-
-<p class="lang-en">
-"The statistical analysis support helped me refine my thesis results and align them with publication standards."
-</p>
-
-<p class="lang-id hidden">
-"Pendampingan analisis statistik membantu menyempurnakan hasil tesis sesuai standar publikasi."
-</p>
-
+<p>"The statistical analysis support helped refine my thesis results and align them with publication standards."</p>
 <strong>— Master’s Student</strong>
-
 </div>
-
-
 
 <div class="testimonial-slide">
-
 <div class="testimonial-avatar">R</div>
-
 <div class="testimonial-rating">★★★★★</div>
-
-<p class="lang-en">
-"The publication strategy consultation strengthened the manuscript structure and improved submission readiness."
-</p>
-
-<p class="lang-id hidden">
-"Konsultasi strategi publikasi memperkuat struktur artikel dan meningkatkan kesiapan submit."
-</p>
-
+<p>"The publication strategy consultation strengthened the manuscript structure and improved submission readiness."</p>
 <strong>— Researcher</strong>
-
 </div>
 
 </div>
-  
+
+<div class="testimonial-dots">
+<span class="dot active" onclick="currentSlide(0)"></span>
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+</div>
+
 </section>
 
 <footer>
@@ -554,16 +285,32 @@ Testimoni Akademik
 </footer>
 
 <script>
-function setLang(lang){
-document.querySelectorAll('.lang-en').forEach(el=>el.classList.add('hidden'));
-document.querySelectorAll('.lang-id').forEach(el=>el.classList.add('hidden'));
+document.addEventListener("DOMContentLoaded", function(){
 
-document.querySelectorAll('.lang-'+lang).forEach(el=>el.classList.remove('hidden'));
+let slides = document.querySelectorAll(".testimonial-slide");
+let dots = document.querySelectorAll(".dot");
+let current = 0;
 
-document.getElementById('btn-en').classList.remove('active');
-document.getElementById('btn-id').classList.remove('active');
-document.getElementById('btn-'+lang).classList.add('active');
+function showSlide(index){
+slides.forEach(slide => slide.classList.remove("active"));
+dots.forEach(dot => dot.classList.remove("active"));
+slides[index].classList.add("active");
+dots[index].classList.add("active");
+current = index;
 }
+
+function nextSlide(){
+current = (current + 1) % slides.length;
+showSlide(current);
+}
+
+window.currentSlide = function(index){
+showSlide(index);
+}
+
+setInterval(nextSlide, 5000);
+
+});
 </script>
 
 </body>
